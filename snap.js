@@ -188,6 +188,7 @@
                     if(cache.easingTo===0){
                         utils.klass.remove(doc.body, 'snapjs-right');
                         utils.klass.remove(doc.body, 'snapjs-left');
+                        utils.klass.remove(doc.body, 'snapjs-closing');
                     }
 
                     utils.dispatchEvent('animated');
@@ -496,6 +497,7 @@
         };
         this.close = function() {
             utils.dispatchEvent('close');
+            utils.klass.add(doc.body, 'snapjs-closing');
             action.translate.easeTo(0);
         };
         this.expand = function(side){
